@@ -1,0 +1,29 @@
+#remove auto generated created by messages (phpstorm)
+
+/\*\*\n \* Created .*\n.*\n.*\n.*\n \*/
+
+#keep only one empty line between php tag and namespace
+
+<\?php\n{3,}
+<\?php\n\n
+
+#php tag and namespace should be in separate lines, with one empty line in between
+
+<\?php (namespace .*$)
+<\?php\n\n$1
+
+#keep only one empty line between namespace and usages
+
+(namespace .*$)\n{3,}
+$1\n\n
+
+#keep only one empty line between usages and class/interface/trait
+
+(use .*;)\n{3,}(class|interface|trait)
+$1\n\n$2
+
+#keep only one empty line between namespace and class/interface/trait
+#this scenario happens only when don't have usages in between
+
+(namespace .*;$)\n{3,}(class|interface|trait)
+$1\n\n$2
