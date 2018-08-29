@@ -1,6 +1,13 @@
+PHPSTORM HELPERS
+
 #remove auto generated created by messages (phpstorm)
 
 /\*\*\n \* Created .*\n.*\n.*\n.*\n \*/
+
+#separate 2 properties that do not have one empty line between them and have docblocks
+
+(.*/\*\*\n.*@.*\n.*\*/\n.*\$.*;.*\n)(.*/\*\*\n.*@var.*\n.*\*/)
+$1\n$2
 
 #keep only one empty line between php tag and namespace
 
